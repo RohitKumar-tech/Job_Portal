@@ -70,7 +70,3 @@ Currently, two official plugins are available:
 ## 📄 License
 
 This project is licensed under the MIT License.
-
----
-
-_Enjoy building with Hirrd!_ 🎉
