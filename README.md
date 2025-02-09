@@ -14,9 +14,9 @@ Hirrd is a modern job portal website built with cutting-edge technologies to con
 
 ## 📸 Screenshots
 
-![Hirrd Homepage](path/to/your/image1.png)
+![Hirrd Homepage](/Project_ui/Screenshot%202025-02-09%20at%2011.33.18 PM.png)
 
-![Job Listing Page](path/to/your/image2.png)
+![Job Listing Page](/Project_ui/Screenshot%202025-02-09%20at%2011.33.26 PM.png)
 
 ## 👥 Contributors
 
