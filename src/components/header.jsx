@@ -5,19 +5,19 @@ import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-reac
 const Header = () => {
   return (
     <>
-      <nav className="py-4 flex justify-between items-center">
-        <Link>
+      <nav className="py-4 flex justify-between items-center ">
+        <Link to="/">
           <img src="/logo.png" alt="hirrd" className="h-20" />
         </Link>
 
-        {/* <Button varient="outline">Login</Button> */}
+        <Button variant="outline">Login</Button>
 
-      <SignedOut>
+      {/* <SignedOut>
         <SignInButton />
       </SignedOut>
       <SignedIn>
         <UserButton />
-      </SignedIn>
+      </SignedIn> */}
 
       </nav>
     </>
