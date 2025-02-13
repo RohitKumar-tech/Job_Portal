@@ -10,7 +10,6 @@ const JobListing = () => {
     const [searchQuery , setSearchQuery] = useState("");
     const [location , setLocation] = useState("");
     const [company_id , setCompany_id] = useState("");
-
     const {isLoaded} =  useUser()
 
     const {
@@ -47,7 +46,13 @@ const JobListing = () => {
                 <div className="mt-8 grid md:frid-cols-2 lg:grid-cols-3 gap-4">
                     {jobs?.length ?(
                         jobs.map((job) =>{
-                            return <JobCard key={job.id} job={job} />
+                            return (
+                                <JobCard 
+                                key={job.id} 
+                                job={job} 
+                                savedInit = {job?.saved?.length > 0}
+                                />
+                            );
                         })
                     ) : (
                         <div>No Jobs Found 🥹</div>
