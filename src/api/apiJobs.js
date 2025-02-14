@@ -41,7 +41,7 @@ export async function saveJob(token, { alreadySaved }, saveData) {
   
       if (deleteError) {
         console.error("Error removing saved job:", deleteError);
-        return data;
+        return null;
       }
   
       return data;

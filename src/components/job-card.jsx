@@ -25,20 +25,27 @@ const JobCard = ({
         alreadySaved: saved , 
     });
 
-    const handleSaveJob = async() => {
-        await fnSavedJob({
-            user_id: user.id,
-            job_id: job.id,
-        });
-        onJobSaved();
+    const handleSaveJob = async () => {
+        setsaved((prev) => !prev); // Optimistically update the UI
+    
+        try {
+            await fnSavedJob({
+                user_id: user.id,
+                job_id: job.id,
+            });
+            onJobSaved();
+        } catch (error) {
+            console.error("Error saving job:", error);
+            setsaved((prev) => !prev); // Revert state if API call fails
+        }
     };
-
+    
     useEffect(() => {
         if(savedJob !== undefined)setsaved(savedJob?.length > 0);
     }, [saveJob]);
 
   return (
-  <Card>
+  <Card className="flex flex-col">
     <CardHeader>
         <CardTitle className="flex justify-between font-bold">
             
