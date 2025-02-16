@@ -12,7 +12,6 @@ import { BarLoader } from "react-spinners";
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
@@ -53,6 +52,13 @@ const JobListing = () => {
         const query = formData.get("search-query");
         if (query) setSearchQuery(query);
     };
+
+    const clearFilter = () => {
+        setSearchQuery("");
+        setCompany_id("");
+        setLocation("");
+        setCurrentPage(1);
+    }
 
     if (!isLoaded) {
         return <BarLoader className="mb-4" width={"100%"} color="#36d7b7" />;
@@ -128,6 +134,8 @@ const JobListing = () => {
                         </SelectGroup>
                     </SelectContent>
                 </Select>
+
+                <Button onClick={clearFilter} variant="destructive" className="sm:w-1/2">Clear Filter</Button>
             </div>
 
             {/* Loading State */}
