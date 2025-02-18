@@ -110,11 +110,13 @@ const JobPage = () => {
 
       {/* Render Application */}
 
-      {job?.recruiter_id !== user?.id && <ApplyJobDrawer 
+      {job?.recruiter_id !== user?.id && ( <ApplyJobDrawer
       job = {job}
       user = {user}
-      />} 
-
+      fetchJob = {fnJob}
+      applied = {job?.applications?.find((ap) => ap.candidate_id === user.id)}
+      />
+      )}
     </div>
   );
 };
