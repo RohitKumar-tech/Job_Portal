@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { BarLoader } from "react-spinners";
 import ApplyJobDrawer from "@/components/apply-job";
+import ApplicationCard from "@/components/application-card";
 
 const JobPage = () => {
   const { isLoaded, user } = useUser();
@@ -117,6 +118,20 @@ const JobPage = () => {
       applied = {job?.applications?.find((ap) => ap.candidate_id === user.id)}
       />
       )}
+
+      {loadingHiringStatus && <BarLoader width={"100%"} color="#36d7b7" />}
+
+      {job?.applications?.length > 0 && job?.recruiter_id === user?.id && (
+        <div className="flex flex-col gap-2">
+          <h2 className="font-bold mb-4 text-xl ml-1">Applications</h2>
+          {job?.applications.map((application) => {
+            return (
+              <ApplicationCard key={application.id} application={application} />
+            );
+          })}
+        </div>
+      )}
+
     </div>
   );
 };
