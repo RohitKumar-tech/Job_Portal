@@ -1,0 +1,51 @@
+{
+    "tables": {
+      "applications": {
+        "id": "int8",
+        "created_at": "timestamptz",
+        "job_id": "int8",
+        "candidate_id": "text",
+        "status": "status",
+        "resume": "text",
+        "skills": "text",
+        "experience": "text",
+        "education": "text",
+        "name": "text"
+      },
+      "saved_jobs": {
+        "id": "int8",
+        "created_at": "timestamptz",
+        "user_id": "text",
+        "job_id": "int8"
+      },
+      "jobs": {
+        "id": "int8",
+        "created_at": "timestamptz",
+        "recruiter_id": "text",
+        "title": "text",
+        "company_id": "int8",
+        "description": "text",
+        "location": "text",
+        "requirements": "text",
+        "isOpen": "bool"
+      },
+      "companies": {
+        "id": "int8",
+        "created_at": "timestamptz",
+        "name": "text",
+        "logo_url": "text"
+      }
+    },
+    "relationships": {
+      "applications": {
+        "job_id": "jobs.id"
+      },
+      "saved_jobs": {
+        "job_id": "jobs.id"
+      },
+      "jobs": {
+        "company_id": "companies.id"
+      }
+    }
+  }
+  
