@@ -1,7 +1,7 @@
 import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "./ui/button";
 import { SignedIn, SignedOut, UserButton, useUser } from "@clerk/clerk-react";
-import { BriefcaseBusinessIcon, Heart, PenBox } from "lucide-react";
+import { BriefcaseBusinessIcon, Heart, PackagePlusIcon, PenBox } from "lucide-react";
 import { useEffect, useState } from "react";
 import { SignIn } from "@clerk/clerk-react";
 
@@ -68,6 +68,11 @@ const Header = () => {
                     label = "Saved Jobs"
                     labelIcon = {<Heart size={15} />}
                     href="/saved-jobs"
+                  />
+                  <UserButton.Link 
+                    label = "ATS Resume Analyzer"
+                    labelIcon = {<PackagePlusIcon size={15} />}
+                    href="/ATS-Analyzer"
                   />
                 </UserButton.MenuItems>
               </UserButton>

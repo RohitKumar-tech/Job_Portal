@@ -7,6 +7,7 @@ import JobListing from './pages/job-listing';
 import JobPage from './pages/job';
 import PostJob from './pages/post-job';
 import SavedJobs from './pages/saved-job';
+import ATSAnalyzer from './pages/ats-analyzer';
 import MyJobs from './pages/my-jobs';
 import { ThemeProvider } from './components/theme-provider';
 import ProtectedRoute from './components/protected-route';
@@ -64,6 +65,14 @@ const router = createBrowserRouter([
         element: ( 
           <ProtectedRoute>
             <MyJobs />
+          </ProtectedRoute>
+          ),
+      },
+      {
+        path: "/ATS-Analyzer",
+        element: ( 
+          <ProtectedRoute>
+            <ATSAnalyzer />
           </ProtectedRoute>
           ),
       },
